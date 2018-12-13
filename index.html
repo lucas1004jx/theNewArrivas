@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>The New Arrivals | Capítulo 6</title>
+		<meta name="The New Arrivals" content="The New Arrivals" />
+		<link rel="stylesheet" type="text/css" href="css/apertura_tag-capitulo-6.css" />
+
+	</head>
+	<body class="loading">
+			<div class="aperturatag">
+				<div class="aperturatag__item ">
+					<div class="aperturatag__item-img " data-displacement="img/displacement/8.jpg" data-intensity="-0.65" data-speedIn="1.2" data-speedOut="1.2"
+					 data-delay="5">
+						<img src="img/1-izquierda.jpg" alt="Image"/>
+						<img src="img/2-izquierda.jpg" alt="Image"/>
+						<img src="img/3-izquierda.jpg" alt="Image"/>
+						<img src="img/4-izquierda.jpg" alt="Image"/>
+					</div>
+				</div>
+				<div class="aperturatag__item">
+					<div class="aperturatag__item-img" data-displacement="img/displacement/4.png" data-intensity="0.2" data-speedIn="1.6" data-speedOut="1.6"
+					data-delay="8">
+						<img src="img/1-derecha.jpg" alt="Image"/>
+						<img src="img/2-derecha.jpg" alt="Image"/>
+						<img src="img/3-derecha.jpg" alt="Image"/>
+						<img src="img/4-derecha.jpg" alt="Image"/>
+					</div>
+				</div>
+   <div class="aperturatag-intro">
+   	<h1>
+			<a href="//elpais.com/agr/la_odisea_de_los_nuevos_europeos/a/">
+			6.epílogo</a>
+		</h1>
+		<h5 class="pretitulo">
+			<a href="href="http://thenewarrivals.eu/"">#TheNewArrivals</a>
+		</h5>
+		<h4 class="aperturatag-titulo">
+			<a href="//elpais.com/internacional/2018/04/23/actualidad/1524481816_910366.html">
+				<span>destino de</span>
+				<span>immigrantes y</span>
+				<span>refugiados</span>
+			</a>
+		</h4>
+		<p>Los reciéin llegados a Espaсa, Reino Unido, Francia y Alemania en el gran desembarco de 2015-2016 reflexionan sobre lo bueno, lo malo y lo sorprendente de sus países de acogida. Un reportaje conjunto de The Guardian, Le Monde, Der Spiegel y EL PAÍS.</p>
+   </div>
+
+			</div>
+
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/three.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/main.js"></script>
+		<script>
+			imagesLoaded( document.querySelectorAll('img'), function(){
+				document.body.classList.remove('loading');
+			});
+
+			Array.from(document.querySelectorAll('.aperturatag__item-img')).forEach(function(el){
+				const imgs = Array.from(el.querySelectorAll('img'));
+				new hoverEffect({
+					parent: el,
+					intensity: el.dataset.intensity || undefined,
+					speedIn: el.dataset.speedin || undefined,
+					speedOut: el.dataset.speedout || undefined,
+					easing: el.dataset.easing || undefined,
+					hover: el.dataset.hover || undefined,
+					image1: imgs[0].getAttribute('src'),
+					image2: imgs[1].getAttribute('src'),
+					image3: imgs[2].getAttribute('src'),
+					image4: imgs[3].getAttribute('src'),
+					displacementImage: el.dataset.displacement,
+					delay:el.dataset.delay
+				});
+			});
+
+
+		</script>
+	</body>
+</html>
